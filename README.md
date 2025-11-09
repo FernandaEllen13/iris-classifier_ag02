@@ -65,17 +65,16 @@ python read.py
 streamlit run main.py
 ```
 
-### 6. Resultado final
+## 📊 Resultado Final
 
 Ao acessar o aplicativo, você verá a acurácia do modelo (calculada sobre os dados de teste) e quatro campos para inserir as medidas da flor.
 
 Após inserir os valores e clicar em "Prever Espécie", o aplicativo exibirá o nome e uma imagem da flor classificada. ⚜️
 
-* **Iris Setosa: **
-![Iris Setosa](src/img/iris-setosa.png)
+### As Espécies Classificadas
 
-* **Iris Versicolor: **
-![Iris Versicolor](src/img/iris-versicolor.png)
+Aqui estão as imagens das espécies que o modelo classifica:
 
-* **Iris Virginica: **
-![Iris Virginica](src/img/iris-virginica.png)
+| Iris Setosa | Iris Versicolor | Iris Virginica |
+| :---: | :---: | :---: |
+| ![Iris Setosa](src/img/iris-setosa.png) | ![Iris Versicolor](src/img/iris-versicolor.png) | ![Iris Virginica](src/img/iris-virginica.png) |
