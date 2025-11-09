@@ -71,7 +71,11 @@ Ao acessar o aplicativo, você verá a acurácia do modelo (calculada sobre os d
 
 Após inserir os valores e clicar em "Prever Espécie", o aplicativo exibirá o nome e uma imagem da flor classificada. ⚜️
 
-
+**Iris Setosa: **
 ![Iris Setosa](src/img/iris-setosa.png)
+
+**Iris Versicolor: **
 ![Iris Versicolor](src/img/iris-versicolor.png)
+
+**Iris Virginica: **
 ![Iris Virginica](src/img/iris-virginica.png)
