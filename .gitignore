@@ -1,0 +1,7 @@
+venv/
+modelo_iris.pkl
+metrics.json
+__pycache__/
+*.pyc
+.vscode/
+.idea/
