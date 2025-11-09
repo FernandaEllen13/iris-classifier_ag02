@@ -3,84 +3,65 @@ Este projeto é um aplicativo web interativo criado como parte da disciplina AG0
 
 O aplicativo exibe a acurácia do modelo treinado e permite que o usuário insira medidas personalizadas para receber uma classificação em tempo real, que é exibida juntamente com uma imagem da espécie prevista.
 
-🚀 Tecnologias e Conceitos Utilizados
-Linguagem: Python
+🚀 Tecnologias Utilizadas
+Linguagem: Python 3
 
-Machine Learning: Scikit-learn (DecisionTreeClassifier para o modelo)
+Machine Learning: scikit-learn (usando DecisionTreeClassifier)
 
-Aplicativo Web: Streamlit (para a interface interativa)
+Interface Web: streamlit
 
-Manipulação de Dados: Pandas (para leitura e processamento do .csv)
+Manipulação de Dados: pandas
 
-Serialização: Joblib e JSON (para salvar o modelo treinado e as métricas)
+Serialização: joblib e json (para salvar modelo e métricas)
 
-Boas Práticas:
+📁 Estrutura do Projeto
+O projeto é dividido em dois scripts principais para separar as responsabilidades, ambos localizados na pasta src/:
 
-Uso de ambiente virtual (venv) para isolamento de dependências.
+read.py: Script de treinamento. É responsável por ler o iris.csv, treinar o modelo, avaliar sua acurácia e salvar os artefatos (modelo_iris.pkl e metrics.json).
 
-Arquivo requirements.txt para gerenciamento de pacotes.
-
-Arquivo .gitignore para manter o repositório limpo.
-
-Separação de responsabilidades:
-
-read.py: Script para treinamento, avaliação e salvamento do modelo.
-
-main.py: Script para carregar o modelo e rodar a aplicação web.
+main.py: Script da aplicação web. É responsável por carregar os artefatos salvos, construir a interface com o Streamlit e realizar as previsões em tempo real.
 
 🛠️ Como Executar o Projeto
-Para rodar este projeto em sua máquina local, siga os passos abaixo.
+Siga os passos abaixo para rodar o aplicativo em sua máquina local.
 
-1. Pré-requisitos
-Ter o Python (versão 3.9 ou superior) instalado.
-
-Ter o Git instalado (para clonar o repositório).
-
-2. Instalação
-Clone o repositório:
-
+1. Clonar o Repositório
 Bash
 
-git clone https://github.com/FernandaEllen13/iris-classifier_ag02.git
+git clone [https://github.com/FernandaEllen13/iris-classifier_ag02.git](https://github.com/FernandaEllen13/iris-classifier_ag02.git)
 cd iris-classifier_ag02
-Crie e ative um ambiente virtual:
-
+2. Criar e Ativar o Ambiente Virtual
 Bash
 
-# Criar o venv
+# Crie o ambiente
 python -m venv venv
 
-# Ativar no Windows (CMD/PowerShell)
+# Ative o ambiente (Windows)
 .\venv\Scripts\activate
+(Para Linux/macOS, o comando seria: source venv/bin/activate)
 
-# Ativar no Linux/macOS
-# source venv/bin/activate
-Instale as dependências: Com o ambiente ativo, instale todas as bibliotecas necessárias:
-
+3. Instalar as Dependências
 Bash
 
 pip install -r requirements.txt
-3. Execução
-O projeto é dividido em duas etapas: treinar o modelo e iniciar o aplicativo.
-
-Treine o Modelo (Apenas uma vez): Este script irá ler o iris.csv, treinar o modelo de Árvore de Decisão e salvar os arquivos modelo_iris.pkl e metrics.json dentro da pasta src.
+4. Treinar o Modelo (Apenas uma vez)
+Antes de iniciar o app, você precisa treinar o modelo. Este comando gera os arquivos modelo_iris.pkl e metrics.json.
 
 Bash
 
-# Navegue até a pasta src
+# Navegue para a pasta do código-fonte
 cd src
 
 # Execute o script de treinamento
 python read.py
-Obs: Se você estiver no Windows, pode precisar usar py em vez de python.
+(Observação: Você só precisa fazer isso uma vez, ou quando quiser retreinar o modelo).
 
-Inicie o Aplicativo Web: Após o treinamento, inicie o servidor do Streamlit.
+5. Iniciar o Aplicativo Streamlit
+Ainda dentro da pasta src, inicie o servidor do Streamlit.
 
 Bash
 
-# (Ainda dentro da pasta 'src')
 streamlit run main.py
-O Streamlit abrirá automaticamente uma aba no seu navegador. Caso não abra, acesse o http://localhost:8501 informado no terminal.
+O aplicativo abrirá automaticamente no seu navegador. Caso contrário, acesse http://localhost:8501.
 
 📊 Resultado Final
 Ao acessar o aplicativo, você verá a acurácia do modelo (calculada sobre os dados de teste) e quatro campos para inserir as medidas da flor.
